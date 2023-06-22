@@ -70,7 +70,7 @@ def import_and_predict(img, model):
   p_max, yhat = torch.max(z.data, 1)
   p = float(format(p_max.numpy()[0], '.4f'))*100
   yhat = int(float(yhat.numpy()[0]))
-  string = f"The model predicts the image as yhat = {yhat} with {p:.2f} % probability."
+  string = f"The uploaded image is of the digit {yhat} with {p:.2f} % probability."
   st.success(string)
 
 if file is None:
