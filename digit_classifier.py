@@ -72,7 +72,8 @@ def import_and_predict(img, model):
   yhat = int(float(yhat.numpy()[0]))
   string = f"The uploaded image is of the digit {yhat} with {p:.2f} % probability."
   st.success(string)
-  st.write("Made by Advait Amit Kisar")
+  st.write("Thanks for using this classifier.")
+  st.write("Made by Advait Amit Kisar.")
 
 if file is None:
   st.text("Please upload an image file")
