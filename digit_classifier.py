@@ -77,5 +77,11 @@ if file is None:
   st.text("Please upload an image file")
 else:
   image = Image.open(file)
-  st.image(image, use_column_width=True)
+  w, h = image.size
+  if w != h:
+    crop = transforms.CenterCrop(min(w, h))
+    image = crop(image)
+    wnew, hnew = image.size
+    print(wnew, hnew)
+  st.image(image, width=20)
   import_and_predict(image, model)
