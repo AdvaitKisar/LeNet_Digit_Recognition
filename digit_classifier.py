@@ -83,5 +83,5 @@ else:
     image = crop(image)
     wnew, hnew = image.size
     print(wnew, hnew)
-  st.image(image, width=20)
+  st.image(image, width=300, caption="Image of the digit")
   import_and_predict(image, model)
