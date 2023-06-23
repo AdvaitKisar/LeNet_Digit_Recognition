@@ -73,7 +73,8 @@ def import_and_predict(img, model):
   string = f"The uploaded image is of the digit {yhat} with {p:.2f} % probability."
   st.success(string)
   st.write("Thanks for using this classifier.")
-  st.write("Made by Advait Amit Kisar. Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
+  st.write("Made by Advait Amit Kisar.")
+  st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
 
 if file is None:
   st.text("Please upload an image file")
