@@ -93,6 +93,7 @@ elif option == "Draw a Doodle":
   st.markdown("""
   Draw on the canvas, to recognise the digit!
   """)
+  st.write("Note: Draw the images such that the digit occupies majority of the canvas.")
   st.sidebar.header("Configuration")
 
   # Specify brush parameters and drawing mode
