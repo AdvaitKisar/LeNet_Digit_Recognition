@@ -109,18 +109,14 @@ elif option == "Draw a Doodle":
     stroke_color=b_color,
     background_color=bg_color,
     update_streamlit=True,
-    height=150,
-    width=150,
+    height=300,
+    width=300,
     key="canvas",
 )
-  # canvas = st_canvas(
-  #     b_width, b_color, bg_color, height=150, width=150, update_streamlit=True, drawing_mode=drawing_mode, key="canvas"
-  # )
   image = canvas.image_data
   # Do something interesting with the image data
   if image is not None:
       image = Image.fromarray(image)
-      image = transforms.Grayscale()(image)
       w, h = image.size
       if w != h:
         crop = transforms.CenterCrop(min(w, h))
