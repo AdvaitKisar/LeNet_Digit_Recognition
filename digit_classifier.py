@@ -42,21 +42,6 @@ class LeNet5(nn.Module):
     x = self.fc2(x)
     return x
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
-@st.cache(allow_output_mutation=True)
-def load_model():
-  model = LeNet5()
-  model.load_state_dict(torch.load('./model.pth'))
-  return model
-
-model = load_model()
-st.write("""
-        # Digit Classification
-        """
-        )
-
-file = st.file_uploader("Please upload an image of a digit", type=["jpg", "png"])
-
 def import_and_predict(img, model):
   img_transform = transforms.Compose([transforms.Grayscale(), transforms.RandomInvert(p=1)])
   img_new = img_transform(img)
@@ -76,9 +61,24 @@ def import_and_predict(img, model):
   st.write("Made by Advait Amit Kisar.")
   st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
 
-if file is None:
-  st.text("Please upload an image file")
-else:
+
+st.set_option('deprecation.showfileUploaderEncoding', False)
+@st.cache(allow_output_mutation=True)
+def load_model():
+  model = LeNet5()
+  model.load_state_dict(torch.load('./model.pth'))
+  return model
+
+model = load_model()
+st.write("""
+        # Digit Recognition
+        """
+        )
+option = st.selectbox(
+    'How would you like to give the input?',
+    ('Upload Image File', 'Doodle'))
+if option == "Upload Image File":
+  file = st.file_uploader("Please upload an image of a digit", type=["jpg", "png"])
   image = Image.open(file)
   w, h = image.size
   if w != h:
