@@ -111,7 +111,7 @@ elif option == "Draw a Doodle":
   # Do something interesting with the image data
   if image is not None:
       image = Image.fromarray(image)
-      image = tranforms.Grayscale()(image)
+      image = transforms.Grayscale()(image)
       w, h = image.size
       if w != h:
         crop = transforms.CenterCrop(min(w, h))
