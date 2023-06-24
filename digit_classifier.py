@@ -1,4 +1,3 @@
-pip install streamlit-drawable-canvas
 from streamlit_drawable_canvas import st_canvas
 
 import streamlit as st
