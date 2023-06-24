@@ -1,3 +1,6 @@
+pip install streamlit-drawable-canvas
+from streamlit_drawable_canvas import st_canvas
+
 import streamlit as st
 import torch
 import torch.nn as nn
@@ -74,9 +77,7 @@ st.write("""
         # Digit Recognition
         """
         )
-option = st.selectbox(
-    'How would you like to give the input?',
-    ('Upload Image File', 'Doodle'))
+option = st.selectbox('How would you like to give the input?', ('Upload Image File', 'Doodle'))
 if option == "Upload Image File":
   file = st.file_uploader("Please upload an image of a digit", type=["jpg", "png"])
   image = Image.open(file)
