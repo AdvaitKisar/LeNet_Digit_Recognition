@@ -110,6 +110,7 @@ elif option == "Draw a Doodle":
   image = canvas.image_data
   # Do something interesting with the image data
   if image is not None:
+      image = Image.fromarray(image)
       st.write(image)
       w, h = image.size
       if w != h:
