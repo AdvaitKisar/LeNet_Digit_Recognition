@@ -59,7 +59,7 @@ def import_and_predict(img, model):
   yhat = int(float(yhat.numpy()[0]))
   string = f"The uploaded image is of the digit {yhat} with {p:.2f} % probability."
   st.success(string)
-  st.write("Thanks for using this classifier.")
+  st.write("Thanks for using this web app.")
   st.write("Made by Advait Amit Kisar.")
   st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
 
@@ -97,10 +97,9 @@ elif option == "Draw a Doodle":
   st.sidebar.header("Configuration")
 
   # Specify brush parameters and drawing mode
-  b_width = st.sidebar.slider("Brush width: ", 1, 100, 10)
+  b_width = st.sidebar.slider("Select brush width: ", 1, 100, 10)
   b_color = st.sidebar.color_picker("Enter brush color hex: ")
   bg_color = st.sidebar.color_picker("Enter background color hex: ", "#FFFFFF")
-  drawing_mode = st.sidebar.checkbox("Drawing mode ?", True)
 
   # Create a canvas component
   canvas = st_canvas(
