@@ -100,7 +100,7 @@ elif option == "Draw a Doodle":
   # Specify brush parameters and drawing mode
   b_width = st.sidebar.slider("Brush width: ", 1, 100, 10)
   b_color = st.sidebar.color_picker("Enter brush color hex: ")
-  bg_color = st.sidebar.color_picker("Enter background color hex: ", "#eee")
+  bg_color = st.sidebar.color_picker("Enter background color hex: ", #FFFFFF)
   drawing_mode = st.sidebar.checkbox("Drawing mode ?", True)
 
   # Create a canvas component
