@@ -79,12 +79,13 @@ st.write("""
 option = st.selectbox('How would you like to give the input?', ('Upload Image File', 'Doodle'))
 if option == "Upload Image File":
   file = st.file_uploader("Please upload an image of a digit", type=["jpg", "png"])
-  image = Image.open(file)
-  w, h = image.size
-  if w != h:
-    crop = transforms.CenterCrop(min(w, h))
-    image = crop(image)
-    wnew, hnew = image.size
-    print(wnew, hnew)
-  st.image(image, width=500, caption="Image of the digit")
-  import_and_predict(image, model)
+  if file is not None:
+    image = Image.open(file)
+    w, h = image.size
+    if w != h:
+      crop = transforms.CenterCrop(min(w, h))
+      image = crop(image)
+      wnew, hnew = image.size
+      print(wnew, hnew)
+      st.image(image, width=500, caption="Image of the digit")
+      import_and_predict(image, model)
