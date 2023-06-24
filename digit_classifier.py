@@ -90,10 +90,8 @@ if option == "Upload Image File":
     st.image(image, width=500, caption="Image of the digit")
     import_and_predict(image, model)
 elif option == "Draw a Doodle":
-  st.title("Drawable Canvas")
   st.markdown("""
-  Draw on the canvas, get the image data back into Python !
-  * Doubleclick to remove the selected object when not in drawing mode
+  Draw on the canvas, to recognise the digit!
   """)
   st.sidebar.header("Configuration")
 
