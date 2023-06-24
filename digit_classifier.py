@@ -104,17 +104,17 @@ elif option == "Draw a Doodle":
   drawing_mode = st.sidebar.checkbox("Drawing mode ?", True)
 
   # Create a canvas component
-  image_data = st_canvas(
+  canvas = st_canvas(
       b_width, b_color, bg_color, height=150, width=150, drawing_mode=drawing_mode, key="canvas"
   )
-
+  image = canvas.image_data
   # Do something interesting with the image data
-  if image_data is not None:
-      w, h = image_data.size
+  if image is not None:
+      w, h = image.size
       if w != h:
         crop = transforms.CenterCrop(min(w, h))
-        image_data = crop(image_data)
-        wnew, hnew = image_data.size
+        image = crop(image)
+        wnew, hnew = image.size
         print(wnew, hnew)
-      st.image(image_data, width=500, caption="Image of the digit")
+      st.image(image, width=500, caption="Image of the digit")
       import_and_predict(image, model)
