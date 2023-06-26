@@ -18,7 +18,7 @@ The dataset used for this project was the MNIST dataset of 70000 single-digit gr
 The data was visualized for different samples of both datasets using MatPlotLib.
 
 ## LeNet5 Model
-Implemented a LeNet5 Model from scratch using a class object, with init and forward functions. The architecture used is as follows:
+Implemented a LeNet5 Model from scratch using a class object, with \__init\__ and forward functions. The architecture used is as follows:
 
 | Layer | Description | Input | Output |
 | --- | --- | --- | --- |
