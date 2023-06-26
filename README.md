@@ -32,5 +32,26 @@ Implemented a LeNet5 Model from scratch using a class object, with \__init\__ an
 ## Training the Model
 1) The LeNet5 was trained for 50 epochs using an Adam Optimizer with a learning rate of 0.001 and Cross Entropy Loss was used as the objective function.
 2) In each epoch, the first for loop runs through the training dataset batch-wise and then, we find the accuracy of the model using the test set.
-3) Both the training cost and the model accuracy on the test set was plotted against the number of epochs, and the final accuracy of the model after training was **98.56%**.
+3) Both the training cost and the model accuracy on the test set were plotted against the number of epochs, and the final accuracy of the model after training was **98.56 %**.
+4) The parameters of the model were saved in a '.pth' file in the directory, which can be fetched later to deploy the model without retraining.
 
+## Prediction Section
+In this section, the model was tested manually on the test set to check its performance.
+
+## Testing Real-World Examples
+1) After taking the input from the user, the image is center cropped to the minimum of height and width.
+2) The image is then converted from RGB to Grayscale and the color is inverted so that the image is similar to the data on which the model has been trained for better detection.
+3) Further, the image is resized to 28 X 28 pixels, converted to PyTorch Float 32 Tensor, and the dimension is expanded to (1, 1, 28, 28) to comply with the dimensions of the model parameters.
+4) This modified input is passed through the model, which recognizes the digit and gives us the probability for the same.
+
+## Deployment
+1) I have used 'streamlit' for deploying the model using a web application, and the file for this implementation is 'digit_recognition.py'.
+2) The model is loaded using the saved parameters in the file 'model.pth'.
+3) The Streamlit website downloads and installs the necessary libraries in its virtual environment.
+4) On the web app, the user has two options to give his/her input, either by uploading the file or by drawing a doodle.
+5) The 1st option prompts the user to upload an image from his/her local system.
+6) The 2nd option gives the user a canvas on which he/she can draw the digit by configuring the brush, and the canvas is sent to the Python script mentioned above for real-time processing.
+
+# Inference
+1) LeNet5 has been trained well enough to recognize single digits with an accuracy of **98.56 %**.
+2) The model can be used by any user through the [web application](https://lenet-digit-recognition-advaitkisar.streamlit.app/) to make use of this to recognize single digits.
