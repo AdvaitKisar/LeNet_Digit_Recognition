@@ -28,3 +28,9 @@ Implemented a LeNet5 Model from scratch using a class object, with \__init\__ an
 | Layer 4 | <ol><li>Flatten the Convolutional Layer into a Fully Connected Layer</li><li>Fully Connected Layer with input size 120 and output size 84.</li><li>Tanh Activation Function</li></ol> | 120 X 1 X 1 | 84 |
 | Layer 5 | Fully Connected Layer with input size 84 and output size 10 | 84 | 10 |
 | Layer 6 | Softmax Layer for predicting the class | 10 | 1 |
+
+## Training the Model
+1) The LeNet5 was trained for 50 epochs using an Adam Optimizer with a learning rate of 0.001 and Cross Entropy Loss was used as the objective function.
+2) In each epoch, the first for loop runs through the training dataset batch-wise and then, we find the accuracy of the model using the test set.
+3) Both the training cost and the model accuracy on the test set was plotted against the number of epochs, and the final accuracy of the model after training was **98.56%**.
+
