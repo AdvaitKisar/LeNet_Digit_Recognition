@@ -16,3 +16,15 @@ The dataset used for this project was the MNIST dataset of 70000 single-digit gr
 
 ## Visualizing Data
 The data was visualized for different samples of both datasets using MatPlotLib.
+
+## LeNet5 Model
+Implemented a LeNet5 Model from scratch using a class object, with init and forward functions. The architecture used is as follows:
+
+| Layer | Description | Input | Output |
+| --- | --- | --- | --- |
+| Layer 1 | <ol><li>Convolutional Layer with kernel size 5 X 5 and padding set to 2</li><li>Tanh Activation Function</li><li>Average Pooling Layer.</li></ol> | 1 X 28 X 28 | 6 X 14 X 14 |
+| Layer 2 | <ol><li>Convolutional Layer with kernel size 5 X 5</li><li>Tanh Activation Function</li><li>Average Pooling Layer.</li></ol> | 6 X 14 X 14 | 16 X 5 X 5 |
+| Layer 3 | <ol><li>Convolutional Layer with kernel size 5 X 5</li><li>Tanh Activation Function</li></ol> | 16 X 5 X 5 | 120 X 1 X 1 |
+| Layer 4 | <ol><li>Flatten the Convolutional Layer into a Fully Connected Layer</li><li>Fully Connected Layer with input size 120 and output size 84.</li><li>Tanh Activation Function</li></ol> | 120 X 1 X 1 | 84 |
+| Layer 5 | Fully Connected Layer with input size 84 and output size 10 | 84 | 10 |
+| Layer 6 | Softmax Layer for predicting the class | 10 | 1 |
