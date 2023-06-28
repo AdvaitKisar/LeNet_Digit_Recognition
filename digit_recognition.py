@@ -45,7 +45,14 @@ class LeNet5(nn.Module):
     return x
 
 def import_and_predict(img, model):
-  img_transform = transforms.Compose([transforms.Grayscale(), transforms.RandomInvert(p=1)])
+  orig_tensor = transforms.ToTensor()(img)
+  w, h = img.size
+  avg_px_val = torch.sum(orig_tensor)/(w*h)
+  if avg_px_val > 255/2:
+    p = 1
+  else:
+    p = 0
+  img_transform = transforms.Compose([transforms.Grayscale(), transforms.RandomInvert(p=p)])
   img_new = img_transform(img)
   img_new.show()
   composed = transforms.Compose([transforms.Resize(28), transforms.ToTensor()])
