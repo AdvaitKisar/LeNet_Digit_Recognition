@@ -49,9 +49,9 @@ def import_and_predict(img, model):
   w, h = img.size
   avg_px_val = torch.sum(orig_tensor)/(w*h)
   if avg_px_val > 255/2:
-    p = 1
-  else:
     p = 0
+  else:
+    p = 1
   img_transform = transforms.Compose([transforms.Grayscale(), transforms.RandomInvert(p=p)])
   img_new = img_transform(img)
   img_new.show()
