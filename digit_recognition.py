@@ -73,7 +73,7 @@ def load_model():
 
 model = load_model()
 st.write("""
-        # Digit Recognition
+        # Single Digit Recognition
         """
         )
 option = st.selectbox('How would you like to give the input?', ('Upload Image File', 'Draw a Doodle'))
@@ -93,7 +93,7 @@ elif option == "Draw a Doodle":
   st.markdown("""
   Draw on the canvas, to recognise the digit!
   """)
-  st.write("Note: Draw the images such that the digit occupies majority of the canvas.")
+  st.write("Note: Draw the image such that the digit occupies majority of the canvas and centered in the canvas.")
   st.sidebar.header("Configuration")
 
   # Specify brush parameters and drawing mode
