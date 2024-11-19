@@ -111,7 +111,13 @@ This application leverages the LeNet architecture to recognize handwritten digit
 3. The predictions are displayed with a message or warning instantaneously!
 
 ### Connect with Me:
-[![LinkedIn](https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg)](https://www.linkedin.com/in/advait-kisar/) [LinkedIn](https://www.linkedin.com/in/advait-kisar/)
+[![LinkedIn](logos/linkedin.png)](https://www.linkedin.com/in/advait-kisar/) [LinkedIn](https://www.linkedin.com/in/advait-kisar/)
+
+[![Kaggle](logos/kaggle.png)](https://www.kaggle.com/advaitkisar) [Kaggle](https://www.kaggle.com/advaitkisar)
+
+[![LeetCode](logos/leetcode.png)](https://leetcode.com/u/advait_kisar/) [LeetCode](https://leetcode.com/u/advait_kisar/)
+
+[![GitHub](logos/github.png)](https://github.com/AdvaitKisar/) [GitHub](https://github.com/AdvaitKisar/)
 
 Thank you for using this web app!
 """)
