@@ -70,6 +70,9 @@ def import_and_predict(img, model, p_threshold):
       st.success(string, icon="✅")
   else:
       st.warning(f"The prediction probability is less than {p_threshold}% or the image is blank.", icon="⚠️")
+
+
+def common_message():
   st.write("Thanks for using this web app.")
   st.write("Made by Advait Amit Kisar.")
   st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
@@ -102,6 +105,7 @@ if option == "Upload Image File":
     # st.image(image, width=500, caption="Image of the digit")
     threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
     import_and_predict(image, model, threshold)
+    common_message()
 elif option == "Draw a Doodle":
   st.markdown("""
   Draw on the canvas, to recognise the digit!
@@ -140,3 +144,5 @@ elif option == "Draw a Doodle":
         # st.image(image, width=500, caption="Image of the digit")
         threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
         import_and_predict(image, model, threshold)
+
+  common_message()
