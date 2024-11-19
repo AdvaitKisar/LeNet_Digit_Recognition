@@ -157,8 +157,6 @@ with col4:
       unsafe_allow_html=True,
   )
 
-st.sidebar.write("\nThank you for using this web app!")
-
 model = load_model()
 st.write("""
         # Single Digit Recognition
@@ -206,7 +204,7 @@ elif option == "Draw a Doodle":
       key="canvas",
   )
   with col2:
-    st.header("Set Threshold and Get Prediction")
+    st.header("Get Prediction")
     image = canvas.image_data
     # Do something interesting with the image data
     if image is not None:
