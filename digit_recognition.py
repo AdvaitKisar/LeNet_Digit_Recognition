@@ -114,35 +114,48 @@ This application leverages the LeNet architecture to recognize handwritten digit
 ### Connect with Me:
 """)
 
+col1, col2, col3, col4 = st.sidebar.columns(4)
 
 # Display logos and URLs in the same line
-
-st.sidebar.markdown(
-    """<a href="https://www.linkedin.com/in/advait-kisar/">
-    <img src="data:image/png;base64,{}" width="30">
-    </a>""".format(
-        base64.b64encode(open("logos/linkedin.png", "rb").read()).decode()
-    ),
-    unsafe_allow_html=True,
-)
-
-col1, col2 = st.sidebar.columns([1, 5])  # Create new columns for next logo
 with col1:
-    st.image("logos/kaggle.png", width=30)  # Kaggle logo
-with col2:
-    st.markdown("[Kaggle](https://www.kaggle.com/advaitkisar)")
+  st.sidebar.markdown(
+      """<a href="https://www.linkedin.com/in/advait-kisar/">
+      <img src="data:image/png;base64,{}" width="30">
+      </a>""".format(
+          base64.b64encode(open("logos/linkedin.png", "rb").read()).decode()
+      ),
+      unsafe_allow_html=True,
+  )
 
-col1, col2 = st.sidebar.columns([1, 5])  # Create new columns for next logo
-with col1:
-    st.image("logos/github.png", width=30)  # GitHub logo
 with col2:
-    st.markdown("[GitHub](https://github.com/AdvaitKisar)")
+  st.sidebar.markdown(
+      """<a href="https://www.kaggle.com/advaitkisar">
+      <img src="data:image/png;base64,{}" width="30">
+      </a>""".format(
+          base64.b64encode(open("logos/kaggle.png", "rb").read()).decode()
+      ),
+      unsafe_allow_html=True,
+  )
 
-col1, col2 = st.sidebar.columns([1, 5])  # Create new columns for next logo
-with col1:
-    st.image("logos/leetcode.png", width=30)  # LeetCode logo
-with col2:
-    st.markdown("[LeetCode](https://leetcode.com/u/advait_kisar/)")
+with col3:
+  st.sidebar.markdown(
+      """<a href="https://github.com/AdvaitKisar">
+      <img src="data:image/png;base64,{}" width="30">
+      </a>""".format(
+          base64.b64encode(open("logos/github.png", "rb").read()).decode()
+      ),
+      unsafe_allow_html=True,
+  )
+
+with col4:
+  st.sidebar.markdown(
+      """<a href="https://leetcode.com/u/advait_kisar/">
+      <img src="data:image/png;base64,{}" width="30">
+      </a>""".format(
+          base64.b64encode(open("logos/leetcode.png", "rb").read()).decode()
+      ),
+      unsafe_allow_html=True,
+  )
 
 st.sidebar.write("Thank you for using this web app!")
 
