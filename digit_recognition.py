@@ -67,7 +67,7 @@ def import_and_predict(img, model, p_threshold):
 
   if p >=p_threshold and not is_blank_image:
       string = f"The uploaded image is of the digit {yhat_val} with {p:.2f} % probability."
-      st.success(string)
+      st.success(string, icon="✅")
   else:
       st.warning(f"The prediction probability is less than {p_threshold}% or the image is blank.", icon="⚠️")
   st.write("Thanks for using this web app.")
