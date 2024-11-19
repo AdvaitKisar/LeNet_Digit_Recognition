@@ -113,26 +113,30 @@ elif option == "Draw a Doodle":
   b_color = "#000000"  # Black ink color
   bg_color = "#FFFFFF"  # White background color
 
-  # Create a canvas component
-  canvas = st_canvas(
-    stroke_width=b_width,
-    stroke_color=b_color,
-    background_color=bg_color,
-    update_streamlit=True,
-    height=300,
-    width=300,
-    key="canvas",
-)
-  image = canvas.image_data
-  # Do something interesting with the image data
-  if image is not None:
-      image = Image.fromarray(image)
-      w, h = image.size
-      if w != h:
-        crop = transforms.CenterCrop(min(w, h))
-        image = crop(image)
-        wnew, hnew = image.size
-        print(wnew, hnew)
-      # st.image(image, width=500, caption="Image of the digit")
-      threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
-      import_and_predict(image, model, threshold)
+  col1, col2 = st.columns(2)
+
+  with col1:
+    # Create a canvas component
+    canvas = st_canvas(
+      stroke_width=b_width,
+      stroke_color=b_color,
+      background_color=bg_color,
+      update_streamlit=True,
+      height=300,
+      width=300,
+      key="canvas",
+  )
+  with col2:
+    image = canvas.image_data
+    # Do something interesting with the image data
+    if image is not None:
+        image = Image.fromarray(image)
+        w, h = image.size
+        if w != h:
+          crop = transforms.CenterCrop(min(w, h))
+          image = crop(image)
+          wnew, hnew = image.size
+          print(wnew, hnew)
+        # st.image(image, width=500, caption="Image of the digit")
+        threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
+        import_and_predict(image, model, threshold)
