@@ -63,7 +63,7 @@ def import_and_predict(img, model):
   is_blank_image = np.mean(img_array) > 250  # Adjust threshold as necessary
 
   if p >= 90 and not is_blank_image:
-      string = f"The uploaded image is of the digit {yhat_val} with {p_max_val:.2f} % probability."
+      string = f"The uploaded image is of the digit {yhat_val} with {p:.2f} % probability."
       st.success(string)
   else:
       st.warning("The prediction probability is less than 90% or the image is too blank.")
