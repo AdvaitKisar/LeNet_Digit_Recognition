@@ -118,7 +118,7 @@ col1, col2, col3, col4 = st.sidebar.columns(4)
 
 # Display logos and URLs in the same line
 with col1:
-  st.sidebar.markdown(
+  st.markdown(
       """<a href="https://www.linkedin.com/in/advait-kisar/">
       <img src="data:image/png;base64,{}" width="30">
       </a>""".format(
@@ -128,7 +128,7 @@ with col1:
   )
 
 with col2:
-  st.sidebar.markdown(
+  st.markdown(
       """<a href="https://www.kaggle.com/advaitkisar">
       <img src="data:image/png;base64,{}" width="30">
       </a>""".format(
@@ -138,7 +138,7 @@ with col2:
   )
 
 with col3:
-  st.sidebar.markdown(
+  st.markdown(
       """<a href="https://github.com/AdvaitKisar">
       <img src="data:image/png;base64,{}" width="30">
       </a>""".format(
@@ -148,7 +148,7 @@ with col3:
   )
 
 with col4:
-  st.sidebar.markdown(
+  st.markdown(
       """<a href="https://leetcode.com/u/advait_kisar/">
       <img src="data:image/png;base64,{}" width="30">
       </a>""".format(
