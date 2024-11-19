@@ -8,29 +8,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
-st.markdown(
-    """
-    <style>
-    /* Set background color for the main app */
-    .reportview-container {
-        background-color: #FFFDD0; /* Cream background */
-    }
-    /* Set background color for the sidebar */
-    .sidebar .sidebar-content {
-        background-color: #FFFDD0; /* Cream background for sidebar */
-    }
-    /* Set text color for better visibility */
-    .reportview-container p, 
-    .reportview-container h1, 
-    .reportview-container h2, 
-    .reportview-container h3 {
-        color: #000000; /* Black text for contrast */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 class LeNet5(nn.Module):
   def __init__(self):
     super(LeNet5, self).__init__()
