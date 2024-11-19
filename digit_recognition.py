@@ -60,7 +60,10 @@ def import_and_predict(img, model):
 
   # Check if the image is blank (thresholding based on pixel values)
   img_array = np.array(img_new.convert("L"))  # Convert to grayscale
-  is_blank_image = np.mean(img_array) > 250  # Adjust threshold as necessary
+  pix_threshold = 250
+  max_pixel = 255
+  mean = np.mean(img_array)
+  is_blank_image = mean > pix_threshold or mean < max_pixel-pix_threshold
   st.write(f"Mean of image is {np.mean(img_array)}")
   p_threshold = 80
 
