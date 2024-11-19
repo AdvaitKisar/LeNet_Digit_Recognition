@@ -114,7 +114,7 @@ This application leverages the LeNet architecture to recognize handwritten digit
 ### Connect with Me:
 """)
 
-col1, col2, col3, col4 = st.sidebar.columns(4)
+col1, col2, col3, col4, col5, col6 = st.sidebar.columns(6)
 
 # Display logos and URLs in the same line
 with col1:
@@ -157,7 +157,7 @@ with col4:
       unsafe_allow_html=True,
   )
 
-st.sidebar.write("Thank you for using this web app!")
+st.sidebar.write("\nThank you for using this web app!")
 
 model = load_model()
 st.write("""
