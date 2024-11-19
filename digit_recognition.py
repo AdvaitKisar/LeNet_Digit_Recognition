@@ -87,7 +87,7 @@ st.write("""
         # Single Digit Recognition
         """
         )
-threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0)
+threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
 option = st.selectbox('How would you like to give the input?', ('Upload Image File', 'Draw a Doodle'))
 if option == "Upload Image File":
   file = st.file_uploader("Please upload an image of a digit", type=["jpg", "png"])
