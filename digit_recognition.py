@@ -6,6 +6,7 @@ import torch.nn as nn
 import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 import numpy as np
+import base64
 from PIL import Image
 
 class LeNet5(nn.Module):
