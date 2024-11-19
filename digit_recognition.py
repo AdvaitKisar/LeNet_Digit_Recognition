@@ -61,14 +61,14 @@ def import_and_predict(img, model):
   # Check if the image is blank (thresholding based on pixel values)
   img_array = np.array(img_new.convert("L"))  # Convert to grayscale
   is_blank_image = np.mean(img_array) > 250  # Adjust threshold as necessary
-
+  st.write(f"Mean of image is {np.mean(img_array)}")
   p_threshold = 80
 
   if p >=p_threshold and not is_blank_image:
       string = f"The uploaded image is of the digit {yhat_val} with {p:.2f} % probability."
       st.success(string)
   else:
-      st.warning("The prediction probability is less than 90% or the image is too blank.")
+      st.warning(f"The prediction probability is less than {p_threshold}% or the image is too blank.")
   st.write("Thanks for using this web app.")
   st.write("Made by Advait Amit Kisar.")
   st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
