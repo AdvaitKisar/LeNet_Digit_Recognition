@@ -44,7 +44,7 @@ class LeNet5(nn.Module):
     x = self.fc2(x)
     return x
 
-def import_and_predict(img, model):
+def import_and_predict(img, model, p_threshold):
   img_transform = transforms.Compose([transforms.Grayscale(), transforms.RandomInvert(p=1)])
   img_new = img_transform(img)
   img_new.show()
@@ -64,8 +64,6 @@ def import_and_predict(img, model):
   max_pixel = 255
   mean = np.mean(img_array)
   is_blank_image = mean > pix_threshold or mean < max_pixel-pix_threshold
-  st.write(f"Mean of image is {np.mean(img_array)}")
-  p_threshold = 80
 
   if p >=p_threshold and not is_blank_image:
       string = f"The uploaded image is of the digit {yhat_val} with {p:.2f} % probability."
@@ -89,6 +87,7 @@ st.write("""
         # Single Digit Recognition
         """
         )
+threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0)
 option = st.selectbox('How would you like to give the input?', ('Upload Image File', 'Draw a Doodle'))
 if option == "Upload Image File":
   file = st.file_uploader("Please upload an image of a digit", type=["jpg", "png"])
@@ -101,7 +100,7 @@ if option == "Upload Image File":
       wnew, hnew = image.size
       print(wnew, hnew)
     st.image(image, width=500, caption="Image of the digit")
-    import_and_predict(image, model)
+    import_and_predict(image, model, threshold)
 elif option == "Draw a Doodle":
   st.markdown("""
   Draw on the canvas, to recognise the digit!
@@ -134,4 +133,4 @@ elif option == "Draw a Doodle":
         wnew, hnew = image.size
         print(wnew, hnew)
       st.image(image, width=500, caption="Image of the digit")
-      import_and_predict(image, model)
+      import_and_predict(image, model, threshold)
