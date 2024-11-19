@@ -56,9 +56,17 @@ def import_and_predict(img, model):
   z = nn.Softmax(dim=1)(z)
   p_max, yhat = torch.max(z.data, 1)
   p = float(format(p_max.numpy()[0], '.4f'))*100
-  yhat = int(float(yhat.numpy()[0]))
-  string = f"The uploaded image is of the digit {yhat} with {p:.2f} % probability."
-  st.success(string)
+  yhat_val = int(float(yhat.numpy()[0]))
+
+  # Check if the image is blank (thresholding based on pixel values)
+  img_array = np.array(img_new.convert("L"))  # Convert to grayscale
+  is_blank_image = np.mean(img_array) > 250  # Adjust threshold as necessary
+
+  if p_max_val >= 90 and not is_blank_image:
+      string = f"The uploaded image is of the digit {yhat_val} with {p_max_val:.2f} % probability."
+      st.success(string)
+  else:
+      st.warning("The prediction probability is less than 90% or the image is too blank.")
   st.write("Thanks for using this web app.")
   st.write("Made by Advait Amit Kisar.")
   st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
@@ -96,10 +104,10 @@ elif option == "Draw a Doodle":
   st.write("Note: Draw the image such that the digit occupies majority of the canvas and centered in the canvas.")
   st.sidebar.header("Configuration")
 
-  # Specify brush parameters and drawing mode
-  b_width = st.sidebar.slider("Select brush width: ", 1, 100, 10)
-  b_color = st.sidebar.color_picker("Enter brush color hex: ")
-  bg_color = st.sidebar.color_picker("Enter background color hex: ", "#FFFFFF")
+  # Fixed brush parameters
+  b_width = 10  # Fixed brush width
+  b_color = "#000000"  # Black ink color
+  bg_color = "#FFFFFF"  # White background color
 
   # Create a canvas component
   canvas = st_canvas(
