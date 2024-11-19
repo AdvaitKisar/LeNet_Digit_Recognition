@@ -62,7 +62,7 @@ def import_and_predict(img, model):
   img_array = np.array(img_new.convert("L"))  # Convert to grayscale
   is_blank_image = np.mean(img_array) > 250  # Adjust threshold as necessary
 
-  if p_max_val >= 90 and not is_blank_image:
+  if p >= 90 and not is_blank_image:
       string = f"The uploaded image is of the digit {yhat_val} with {p_max_val:.2f} % probability."
       st.success(string)
   else:
