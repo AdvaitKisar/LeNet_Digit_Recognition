@@ -93,7 +93,8 @@ def load_model():
   return model
 
 # Add the sidebar header and project details
-st.sidebar.header("Single Digit Recognition")
+st.sidebar.image("logos/Lenet.png", use_column_width=True)
+st.sidebar.header("Digit Recognition using LeNet")
 st.sidebar.write("""
 This application leverages the LeNet architecture to recognize handwritten digits. Users can either upload an image of a digit or draw one directly on the canvas. The model predicts the digit along with the associated probability.
 
