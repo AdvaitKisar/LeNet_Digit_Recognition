@@ -69,7 +69,7 @@ def import_and_predict(img, model, p_threshold):
       string = f"The uploaded image is of the digit {yhat_val} with {p:.2f} % probability."
       st.success(string)
   else:
-      st.warning(f"The prediction probability is less than {p_threshold}% or the image is blank.")
+      st.warning(f"The prediction probability is less than {p_threshold}% or the image is blank.", icon="⚠️")
   st.write("Thanks for using this web app.")
   st.write("Made by Advait Amit Kisar.")
   st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
