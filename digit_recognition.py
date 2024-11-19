@@ -73,9 +73,15 @@ def import_and_predict(img, model, p_threshold):
 
 
 def common_message():
-  st.write("Thanks for using this web app.")
-  st.write("Made by Advait Amit Kisar.")
-  st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
+  st.write('''
+  ### Contact:
+  For any queries or feedback, reach out to:
+  - **Advait Amit Kisar**
+  - Phone: +91 7774035501
+  - Email: [advaitkisar2509@gmail.com](mailto:advaitkisar2509@gmail.com)
+  
+  Thank you for using this web app!
+  ''')
 
 
 st.set_option('deprecation.showfileUploaderEncoding', False)
@@ -84,6 +90,31 @@ def load_model():
   model = LeNet5()
   model.load_state_dict(torch.load('./model.pth'))
   return model
+
+# Add the sidebar header and project details
+st.sidebar.header("Single Digit Recognition")
+st.sidebar.write("""
+This application leverages the LeNet architecture to recognize handwritten digits. Users can either upload an image of a digit or draw one directly on the canvas. The model predicts the digit along with the associated probability.
+
+### Features:
+- **Upload Image**: Upload a digit image in JPG or PNG format.
+- **Draw a Doodle**: Use the drawing canvas to create a digit.
+- **Probability Threshold**: Adjust the threshold to filter predictions based on confidence levels.
+
+### Model Details:
+- **Architecture**: LeNet5, a convolutional neural network designed for image classification.
+- **Input Size**: The model expects grayscale images of size 28x28 pixels.
+
+### Instructions:
+1. Choose how to input your digit (upload or draw).
+2. Set the probability threshold for predictions.
+3. The predictions are displayed with a message or warning instantaneously!
+
+### Connect with Me:
+[![LinkedIn](https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg)](https://www.linkedin.com/in/advait-kisar/) [LinkedIn](https://www.linkedin.com/in/advait-kisar/)
+
+Thank you for using this web app!
+""")
 
 model = load_model()
 st.write("""
@@ -108,7 +139,7 @@ if option == "Upload Image File":
     common_message()
 elif option == "Draw a Doodle":
   st.markdown("""
-  Draw on the canvas, to recognise the digit!
+  Draw on the canvas to recognise the digit!
   """)
   st.write("Note: Draw the image such that the digit occupies majority of the canvas and is centered in the canvas.")
 
