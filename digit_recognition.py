@@ -60,7 +60,7 @@ def import_and_predict(img, model):
 
   # Check if the image is blank (thresholding based on pixel values)
   img_array = np.array(img_new.convert("L"))  # Convert to grayscale
-  pix_threshold = 250
+  pix_threshold = 252
   max_pixel = 255
   mean = np.mean(img_array)
   is_blank_image = mean > pix_threshold or mean < max_pixel-pix_threshold
@@ -71,7 +71,7 @@ def import_and_predict(img, model):
       string = f"The uploaded image is of the digit {yhat_val} with {p:.2f} % probability."
       st.success(string)
   else:
-      st.warning(f"The prediction probability is less than {p_threshold}% or the image is too blank.")
+      st.warning(f"The prediction probability is less than {p_threshold}% or the image is blank.")
   st.write("Thanks for using this web app.")
   st.write("Made by Advait Amit Kisar.")
   st.write("Reach out to me for any queries/discussion at +91 7774035501 or advaitkisar2509@gmail.com.")
@@ -106,7 +106,7 @@ elif option == "Draw a Doodle":
   st.markdown("""
   Draw on the canvas, to recognise the digit!
   """)
-  st.write("Note: Draw the image such that the digit occupies majority of the canvas and centered in the canvas.")
+  st.write("Note: Draw the image such that the digit occupies majority of the canvas and is centered in the canvas.")
 
   # Fixed brush parameters
   b_width = 10  # Fixed brush width
