@@ -109,16 +109,21 @@ This application leverages the LeNet architecture to recognize handwritten digit
 1. Choose how to input your digit (upload or draw).
 2. Set the probability threshold for predictions.
 3. The predictions are displayed with a message or warning instantaneously!
-""")
 
 ### Connect with Me:
-# Display logos and URLs in the same line
-col1, col2 = st.sidebar.columns([1, 5])  # Adjust column widths as needed
+""")
 
-with col1:
-    st.image("logos/linkedin.png", width=30)  # LinkedIn logo
-with col2:
-    st.markdown("[LinkedIn](https://www.linkedin.com/in/advait-kisar/)")
+
+# Display logos and URLs in the same line
+
+st.sidebar.markdown(
+    """<a href="https://www.linkedin.com/in/advait-kisar/">
+    <img src="data:image/png;base64,{}" width="30">
+    </a>""".format(
+        base64.b64encode(open("logos/linkedin.png", "rb").read()).decode()
+    ),
+    unsafe_allow_html=True,
+)
 
 col1, col2 = st.sidebar.columns([1, 5])  # Create new columns for next logo
 with col1:
@@ -176,6 +181,7 @@ elif option == "Draw a Doodle":
 
   with col1:
     # Create a canvas component
+    st.header("Canvas for Input")
     canvas = st_canvas(
       stroke_width=b_width,
       stroke_color=b_color,
@@ -186,6 +192,7 @@ elif option == "Draw a Doodle":
       key="canvas",
   )
   with col2:
+    st.header("Set Threshold and Get Prediction")
     image = canvas.image_data
     # Do something interesting with the image data
     if image is not None:
