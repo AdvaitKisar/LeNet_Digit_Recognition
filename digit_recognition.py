@@ -99,7 +99,7 @@ if option == "Upload Image File":
       image = crop(image)
       wnew, hnew = image.size
       print(wnew, hnew)
-    st.image(image, width=500, caption="Image of the digit")
+    # st.image(image, width=500, caption="Image of the digit")
     threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
     import_and_predict(image, model, threshold)
 elif option == "Draw a Doodle":
@@ -133,6 +133,6 @@ elif option == "Draw a Doodle":
         image = crop(image)
         wnew, hnew = image.size
         print(wnew, hnew)
-      st.image(image, width=500, caption="Image of the digit")
+      # st.image(image, width=500, caption="Image of the digit")
       threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
       import_and_predict(image, model, threshold)
