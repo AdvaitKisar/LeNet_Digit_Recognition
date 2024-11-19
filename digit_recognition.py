@@ -112,17 +112,31 @@ This application leverages the LeNet architecture to recognize handwritten digit
 """)
 
 ### Connect with Me:
-st.sidebar.image("logos/linkedin.png", width=30)  # LinkedIn logo
-st.sidebar.markdown("[LinkedIn](https://www.linkedin.com/in/advait-kisar/)")
+# Display logos and URLs in the same line
+col1, col2 = st.sidebar.columns([1, 5])  # Adjust column widths as needed
 
-st.sidebar.image("logos/kaggle.png", width=30)  # Kaggle logo
-st.sidebar.markdown("[Kaggle](https://www.kaggle.com/advaitkisar)")
+with col1:
+    st.image("logos/linkedin.png", width=30)  # LinkedIn logo
+with col2:
+    st.markdown("[LinkedIn](https://www.linkedin.com/in/advait-kisar/)")
 
-st.sidebar.image("logos/leetcode.png", width=30)  # LeetCode logo
-st.sidebar.markdown("[LeetCode](https://leetcode.com/u/advait_kisar/)")
+col1, col2 = st.sidebar.columns([1, 5])  # Create new columns for next logo
+with col1:
+    st.image("logos/kaggle.png", width=30)  # Kaggle logo
+with col2:
+    st.markdown("[Kaggle](https://www.kaggle.com/advaitkisar)")
 
-st.sidebar.image("logos/github.png", width=30)  # GitHub logo
-st.sidebar.markdown("[GitHub](https://github.com/AdvaitKisar)")
+col1, col2 = st.sidebar.columns([1, 5])  # Create new columns for next logo
+with col1:
+    st.image("logos/github.png", width=30)  # GitHub logo
+with col2:
+    st.markdown("[GitHub](https://github.com/AdvaitKisar)")
+
+col1, col2 = st.sidebar.columns([1, 5])  # Create new columns for next logo
+with col1:
+    st.image("logos/leetcode.png", width=30)  # LeetCode logo
+with col2:
+    st.markdown("[LeetCode](https://leetcode.com/u/advait_kisar/)")
 
 st.sidebar.write("Thank you for using this web app!")
 
