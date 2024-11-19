@@ -117,14 +117,14 @@ This application leverages the LeNet architecture to recognize handwritten digit
 
 # Display logos and URLs in the same line
 
-# st.sidebar.markdown(
-#     """<a href="https://www.linkedin.com/in/advait-kisar/">
-#     <img src="data:image/png;base64,{}" width="30">
-#     </a>""".format(
-#         base64.b64encode(open("logos/linkedin.png", "rb").read()).decode()
-#     ),
-#     unsafe_allow_html=True,
-# )
+st.sidebar.markdown(
+    """<a href="https://www.linkedin.com/in/advait-kisar/">
+    <img src="data:image/png;base64,{}" width="30">
+    </a>""".format(
+        base64.b64encode(open("logos/linkedin.png", "rb").read()).decode()
+    ),
+    unsafe_allow_html=True,
+)
 
 col1, col2 = st.sidebar.columns([1, 5])  # Create new columns for next logo
 with col1:
