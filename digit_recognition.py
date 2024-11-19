@@ -8,6 +8,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
+# Custom CSS for cream background
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background-color: #FFFDD0; /* Cream background */
+    }
+    .sidebar .sidebar-content {
+        background-color: #FFFDD0; /* Cream background for sidebar */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 class LeNet5(nn.Module):
   def __init__(self):
     super(LeNet5, self).__init__()
