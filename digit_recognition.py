@@ -109,18 +109,22 @@ This application leverages the LeNet architecture to recognize handwritten digit
 1. Choose how to input your digit (upload or draw).
 2. Set the probability threshold for predictions.
 3. The predictions are displayed with a message or warning instantaneously!
+""")
 
 ### Connect with Me:
-[![LinkedIn](logos/linkedin.png)](https://www.linkedin.com/in/advait-kisar/) [LinkedIn](https://www.linkedin.com/in/advait-kisar/)
+st.sidebar.image("logos/linkedin.png", width=30)  # LinkedIn logo
+st.sidebar.markdown("[LinkedIn](https://www.linkedin.com/in/advait-kisar/)")
 
-[![Kaggle](logos/kaggle.png)](https://www.kaggle.com/advaitkisar) [Kaggle](https://www.kaggle.com/advaitkisar)
+st.sidebar.image("logos/kaggle.png", width=30)  # Kaggle logo
+st.sidebar.markdown("[Kaggle](https://www.kaggle.com/advaitkisar)")
 
-[![LeetCode](logos/leetcode.png)](https://leetcode.com/u/advait_kisar/) [LeetCode](https://leetcode.com/u/advait_kisar/)
+st.sidebar.image("logos/leetcode.png", width=30)  # LeetCode logo
+st.sidebar.markdown("[LeetCode](https://leetcode.com/u/advait_kisar/)")
 
-[![GitHub](logos/github.png)](https://github.com/AdvaitKisar/) [GitHub](https://github.com/AdvaitKisar/)
+st.sidebar.image("logos/github.png", width=30)  # GitHub logo
+st.sidebar.markdown("[GitHub](https://github.com/AdvaitKisar)")
 
-Thank you for using this web app!
-""")
+st.sidebar.write("Thank you for using this web app!")
 
 model = load_model()
 st.write("""
