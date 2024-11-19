@@ -102,7 +102,6 @@ elif option == "Draw a Doodle":
   Draw on the canvas, to recognise the digit!
   """)
   st.write("Note: Draw the image such that the digit occupies majority of the canvas and centered in the canvas.")
-  st.sidebar.header("Configuration")
 
   # Fixed brush parameters
   b_width = 10  # Fixed brush width
