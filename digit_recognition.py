@@ -104,13 +104,24 @@ This application leverages the LeNet architecture to recognize handwritten digit
 - **Probability Threshold**: Adjust the threshold to filter predictions based on confidence levels.
 
 ### Model Details:
-- **Architecture**: LeNet5, a convolutional neural network designed for image classification.
-- **Input Size**: The model expects grayscale images of size 28x28 pixels.
+- **Architecture**: Based on LeNet5, a convolutional neural network designed for image classification.
+- **Input Size**: The model expects grayscale images of size 28x28 pixels as it is trained on MNIST Dataset.
 
 ### Instructions:
 1. Choose how to input your digit (upload or draw).
 2. Set the probability threshold for predictions.
 3. The predictions are displayed with a message or warning instantaneously!
+
+### Working of the App:
+1. The first step is to select the input mode, i.e. uploading a file or drawing on the canvas.
+2. The image is preprocessed in both cases as follows:-
+   a. The image is first center cropped if the image's width and height are not same.
+   b. The image is then converted to Grayscale, followed by inversion to be similar to MNIST images.
+   c. The images are then resized to 28X28 size and then passed through the model as a tensor.
+   d. The output is found using the Softmax function and associated probability is also obtained.
+3. Finally, after processing through the model, based on the probability threshold (default = 80%), the message is printed with the probability or else an warning.
+4. A salient feature of this web-app is that the probability threshold can be modified realtime to adjust the confidence probability as per user's convenience.
+5. The web-app detects minute changes in the image or canvas and provides instant predictions!
 
 ### Connect with Me:
 """)
@@ -173,9 +184,6 @@ if option == "Upload Image File":
     if w != h:
       crop = transforms.CenterCrop(min(w, h))
       image = crop(image)
-      wnew, hnew = image.size
-      print(wnew, hnew)
-    # st.image(image, width=500, caption="Image of the digit")
     threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
     import_and_predict(image, model, threshold)
     common_message()
@@ -207,16 +215,12 @@ elif option == "Draw a Doodle":
   with col2:
     st.header("Get Prediction")
     image = canvas.image_data
-    # Do something interesting with the image data
     if image is not None:
         image = Image.fromarray(image)
         w, h = image.size
         if w != h:
           crop = transforms.CenterCrop(min(w, h))
           image = crop(image)
-          wnew, hnew = image.size
-          print(wnew, hnew)
-        # st.image(image, width=500, caption="Image of the digit")
         threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
         import_and_predict(image, model, threshold)
 
