@@ -115,10 +115,15 @@ This application leverages the LeNet architecture to recognize handwritten digit
 ### Working of the App:
 1. **Input Mode Selection**: Users can choose to upload an image or draw on a canvas.
 2. **Image Preprocessing**:
-   - a. **Center Cropping**: Ensures the image dimensions are equal.
-   - b. **Grayscale Conversion and Inversion**: Prepares the image to match MNIST format.
-   - c. **Resizing**: Adjusts the image to 28x28 pixels before tensor conversion.
-   - d. **Model Prediction**: Applies the Softmax function to obtain output probabilities.
+
+   i. **Center Cropping**: Ensures the image dimensions are equal.
+   
+   ii. **Grayscale Conversion and Inversion**: Prepares the image to match MNIST format.
+   
+   iii. **Resizing**: Adjusts the image to 28x28 pixels before tensor conversion.
+   
+   iv. **Model Prediction**: Applies the Softmax function to obtain output probabilities.
+   
 3. **Thresholding**: Displays the prediction with the probability if it meets the default threshold of 80%; otherwise, a warning is issued.
 4. **Real-time Adjustments**: Users can modify the probability threshold dynamically for personalized confidence levels.
 5. **Instant Predictions**: The app detects minor changes in the input and provides immediate feedback.
