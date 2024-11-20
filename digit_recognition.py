@@ -113,15 +113,15 @@ This application leverages the LeNet architecture to recognize handwritten digit
 3. The predictions are displayed with a message or warning instantaneously!
 
 ### Working of the App:
-1. The first step is to select the input mode, i.e. uploading a file or drawing on the canvas.
-2. The image is preprocessed in both cases as follows:-
-    1. The image is first center cropped if the image's width and height are not same.
-    2. The image is then converted to Grayscale, followed by inversion to be similar to MNIST images.
-    3. The images are then resized to 28X28 size and then passed through the model as a tensor.
-    4. The output is found using the Softmax function and associated probability is also obtained.
-3. Finally, after processing through the model, based on the probability threshold (default = 80%), the message is printed with the probability or else an warning.
-4. A salient feature of this web-app is that the probability threshold can be modified realtime to adjust the confidence probability as per user's convenience.
-5. The web-app detects minute changes in the image or canvas and provides instant predictions!
+1. **Input Mode Selection**: Users can choose to upload an image or draw on a canvas.
+2. **Image Preprocessing**:
+   - a. **Center Cropping**: Ensures the image dimensions are equal.
+   - b. **Grayscale Conversion and Inversion**: Prepares the image to match MNIST format.
+   - c. **Resizing**: Adjusts the image to 28x28 pixels before tensor conversion.
+   - d. **Model Prediction**: Applies the Softmax function to obtain output probabilities.
+3. **Thresholding**: Displays the prediction with the probability if it meets the default threshold of 80%; otherwise, a warning is issued.
+4. **Real-time Adjustments**: Users can modify the probability threshold dynamically for personalized confidence levels.
+5. **Instant Predictions**: The app detects minor changes in the input and provides immediate feedback.
 
 ### Connect with Me:
 """)
