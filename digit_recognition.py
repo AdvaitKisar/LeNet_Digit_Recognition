@@ -184,6 +184,7 @@ if option == "Upload Image File":
     if w != h:
       crop = transforms.CenterCrop(min(w, h))
       image = crop(image)
+    st.image(image, width=300, caption="Image of the digit")
     threshold = st.slider("Set the probability threshold:", min_value=0.0, max_value=100.0, value=80.0, step=0.1)
     import_and_predict(image, model, threshold)
     common_message()
