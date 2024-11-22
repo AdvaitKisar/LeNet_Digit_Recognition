@@ -105,7 +105,9 @@ This application leverages the LeNet architecture to recognize handwritten digit
 
 ### Model Details:
 - **Architecture**: Based on LeNet5, a convolutional neural network designed for image classification.
-- **Input Size**: The model expects grayscale images of size 28x28 pixels as it is trained on MNIST Dataset.
+- **Input Size**: The model expects grayscale images of size 28x28 pixels as it is trained on MNIST Dataset. 
+
+Note: Although model takes input of size 28X28, the Web-App can take any input and process it.
 
 ### Instructions:
 1. Choose how to input your digit (upload or draw).
